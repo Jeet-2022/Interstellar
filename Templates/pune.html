@@ -1,0 +1,164 @@
+{% load static %}
+{% static "images" as baseUrl %}
+{% static "images" as baseUrl %}
+<!DOCTYPE html>
+<html>
+
+       <head>
+             <title>Interstellar/pune</title>
+             <meta charset="utf-8">
+             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+             <link rel="stylesheet" href="CSS/register.css">
+             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+             <meta charset="utf-8">
+             <meta http-equiv="X-UA-Compatible" content="IE=edge">
+             <meta name="description" content="Travello template project">
+             <meta name="viewport" content="width=device-width, initial-scale=1">
+             <link rel="stylesheet" type="text/css" href="{% static  'styles/bootstrap4/bootstrap.min.css' %}">
+             <link href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+             <link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.css' %}">
+             <link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.theme.default.css'%}">
+             <link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/animate.css' %}">
+             <link rel="stylesheet" type="text/css" href="{% static 'styles/main_styles.css' %}">
+             <link rel="stylesheet" type="text/css" href="{% static 'styles/responsive.css' %}">
+                   
+       </head>
+       <body class="bg_image" style="background-image: url( {% static 'images/news.jpg' %});opacity:10px">
+              
+<div class="super_container">
+	
+	<!-- Header -->
+
+	<header class="header">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="header_content d-flex flex-row align-items-center justify-content-start">
+						<div class="header_content_inner d-flex flex-row align-items-end justify-content-start">
+							<div class="logo"><a href="{% static 'index.html' %}">Interstellar</a></div>
+							<nav class="main_nav">
+								<ul class="d-flex flex-row align-items-start justify-content-start">
+									<li class="active"><a href="pages/home">Home</a></li>
+									<li><a href="{%static 'about.html' %}">About us</a></li>
+									<li><a href="{% static  '#' %}">Services</a></li>
+									<li>{{user.first_name}}</li>
+									<li><a href="accounts/logout">Logout</a></li>
+								</ul>
+							</nav>
+							<div class="header_phone ml-auto">Call us: 00-56 445 678 33</div>
+
+							<!-- Hamburger -->
+
+							<div class="hamburger ml-auto">
+								<i class="fa fa-bars" aria-hidden="true"></i>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="header_social d-flex flex-row align-items-center justify-content-start">
+			<ul class="d-flex flex-row align-items-start justify-content-start">
+				<li><a href="{% static '#'%}"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+				<li><a href="{% static '#' %}"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+				<li><a href="{% static '# '%}"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+				<li><a href="{% static '#' %}"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+				<li><a href="{% static '#' %}"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
+				<li><a href="{% static '#' %}"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+			</ul>
+		</div>
+	</header>
+
+	<!-- Menu -->
+
+	<div class="menu">
+		<div class="menu_header d-flex flex-row align-items-center justify-content-start">
+			<div class="menu_logo"><a href="{% static 'index.html' %}">Travello</a></div>
+			<div class="menu_close_container ml-auto"><div class="menu_close"><div></div><div></div></div></div>
+		</div>
+		<div class="menu_content">
+			<ul>
+				<li><a href="{% static 'index.html' %}">Home</a></li>
+				<li><a href="{% static 'about.html' %}">About us</a></li>
+				<li><a href="{% static '#' %}">Services</a></li>
+				<li><a href="{% static 'news.html' %}">News</a></li>
+				<li><a href="{% static 'contact.html' %}">Contact</a></li>
+			</ul>
+		</div>
+		<div class="menu_social">
+			<div class="menu_phone ml-auto">Call us: 00-56 445 678 33</div>
+			<ul class="d-flex flex-row align-items-start justify-content-start">
+				<li><a href="{% static '#'%}"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+				<li><a href="{% static '#'%}"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+				<li><a href="{% static '#'%}"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+				<li><a href="{% static '#'%}"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+				<li><a href="{% static '#'%}"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
+				<li><a href="{% static '#'%}"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+			</ul>
+		</div>
+       </div>
+       <!-- Home -->
+
+	<div class="home">
+		
+		<!-- Home Slider -->
+		<div class="home_slider_container">
+                     
+		</div>
+       </div>
+       	<!-- Search -->
+
+	<div class="home_search">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="home_search_container">
+						<div class="home_search_title">Pune</div>
+						<div class="home_search_content">
+                                                 <!--Description-->
+       
+                                                 <div  class="jumbotron jumbotron-fluid">
+                     
+                                                             <div class="container">
+                     
+                                                                     <strong style="color: black;">PUNE – The Best City to Live in India</strong>
+                                                                     <p>
+                                                                          The second biggest city in the state of Maharashtra with around 4.5 million people living happily in an area of 450 sq. km. I have lived in many cities over the years. However, PUNE holds a special place in my heart.&nbsp;No other place has given the level of thrill, fun, memories, holidays &amp; opportunities as Pune. The city emerged drastically over the span of last 10 years and was awarded as the 2nd best city to live in India.
+                                                                     </p>
+                                                                     <p>
+                                                                          With great weather, amazing nightlife, lip smacking food &amp; &nbsp;unbelievable holiday destinations in nearby proximity – PUNE has everything one would want in a satisfactory lifespan. Even after being famous for a modern and fashionable lifestyle, the people of this city still maintains the ground of their cultural values. Such an alluring character of Pune makes it the best city to live in India.
+                                                                     </p>
+                                                             </div>
+
+                                                 </div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+       <!-- Destinations -->
+
+
+	<div class="destinations" id="destinations">
+		<div class="container">
+			<div class="row">
+				<div class="col text-center">
+					<div class="section_subtitle">simply amazing places</div>
+					<div class="section_title"><h2>Popular Destinations</h2></div>
+				</div>
+			</div>
+			<div class="row destinations_row">
+				<div class="col">
+					<div class="destinations_container item_grid">
+
+
+	
+
+       
+
+       </body>
+</html>
