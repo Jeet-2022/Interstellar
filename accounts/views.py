@@ -7,6 +7,8 @@ from django.http import HttpResponse
 from . import forms
 from django.forms.models import BaseModelFormSet
 from django.contrib.auth.models import User
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 class RegisterationForm(CreateView):
     form_class = forms.RegisterationForm 
@@ -20,10 +22,16 @@ class EditProfile(View):
         form = forms.ChangeProfile
         return render(request,'editProfile.html',{'form': form })
     def post(self,request):
-        form = forms.ChangeProfile(request.POST , instance = request.user)
-        if form.is_valid():
-             form.save()
-             return redirect(reverse_lazy('login'))
+        form = forms.ChangeProfile(request.POST or None, instance = request.user)
+        
+        username = request.POST['username']    
+        if User.objects.all().filter(username = username).exists():
+                messages.info(request,'Username Taken. Please try a different username')
+                return render(request,'editProfile.html',{'form': form })
+
+        elif form.is_valid():
+                    form.save()
+                    return redirect(reverse_lazy('login'))                 
         else:
              form = forms.ChangeProfile(instance =request.user)
 

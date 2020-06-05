@@ -15,7 +15,8 @@ class RegisterationForm(UserCreationForm):
 
 
 class ChangeProfile(UserChangeForm):
-    class Meta:
-        model = User
-        fields = ['username' ]
+        class Meta:
+            model = User
+            fields = ['username' ]
+        
         
