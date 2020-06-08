@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+from .models import Profile
 
 # Create your models here.
 
@@ -19,4 +20,13 @@ class ChangeProfile(UserChangeForm):
             model = User
             fields = ['username' ]
         
-        
+class UserProfileForm(forms.ModelForm):
+     
+    class Meta:
+        model = Profile
+        fields = ('first_name','last_name','date_of_birth','gender')
+        gender = (('M','Male'),('F','Female'),('O','Others')) 
+        widgets = {
+            'date_of_birth' : forms.DateInput(format=('%m/%d/%Y'), attrs={'class':'form-control', 'placeholder':'Select a date', 'type':'date'}),
+            'gender' : forms.Select(choices = gender)
+        }

@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect ,get_object_or_404
 from django.views.generic import CreateView ,TemplateView ,UpdateView, View
 from django.urls import reverse_lazy
-from .forms import ChangeProfile
+from .forms import ChangeProfile, UserProfileForm
 from django.views.generic.base import RedirectView 
 from django.http import HttpResponse
 from . import forms
@@ -9,6 +9,7 @@ from django.forms.models import BaseModelFormSet
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 class RegisterationForm(CreateView):
     form_class = forms.RegisterationForm 
@@ -33,7 +34,7 @@ class EditProfile(View):
                     form.save()
                     return redirect(reverse_lazy('login'))                 
         else:
-             form = forms.ChangeProfile(instance =request.user)
+             form = forms.ChangeProfile(instance = request.user)
 
         return render(request ,'editProfile.html',{'form' : form } )
 
@@ -41,5 +42,10 @@ class EditProfile(View):
     
         
             
-        
+class CreateProfile(CreateView):
+      form_class = UserProfileForm
+      template_name = 'profile.html' 
+      success_url = '/'
+
+    
 

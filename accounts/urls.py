@@ -18,6 +18,7 @@ urlpatterns = [
     auth_views.LogoutView.as_view(),
     name = 'logout'),
 
-    path('profile/',views.EditProfile.as_view(),name ='editprofile' )
+    path('edit/',views.EditProfile.as_view(),name ='editprofile' ),
     
+    path('profile/',views.CreateProfile.as_view(),name = 'profile')
 ]
